@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexd.ESX.Server", "Nexd.ESX.Server.csproj", "{AD179BC9-C2BD-4425-B7C9-6D0E2215D492}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexd.ESX.Client", "..\Nexd.ESX.Client\Nexd.ESX.Client.csproj", "{9A191DC5-4CF9-4665-9485-E820BDE0AE84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nexd.ESX.Shared", "..\Nexd.ESX.Shared\Nexd.ESX.Shared.csproj", "{4ECA82E2-DF1A-47BF-8CE2-9B51F09D00E3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD179BC9-C2BD-4425-B7C9-6D0E2215D492}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD179BC9-C2BD-4425-B7C9-6D0E2215D492}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD179BC9-C2BD-4425-B7C9-6D0E2215D492}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD179BC9-C2BD-4425-B7C9-6D0E2215D492}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A191DC5-4CF9-4665-9485-E820BDE0AE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A191DC5-4CF9-4665-9485-E820BDE0AE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A191DC5-4CF9-4665-9485-E820BDE0AE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A191DC5-4CF9-4665-9485-E820BDE0AE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4ECA82E2-DF1A-47BF-8CE2-9B51F09D00E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4ECA82E2-DF1A-47BF-8CE2-9B51F09D00E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4ECA82E2-DF1A-47BF-8CE2-9B51F09D00E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4ECA82E2-DF1A-47BF-8CE2-9B51F09D00E3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E583C75D-9315-4C1F-8EDC-8981D7354A03}
+	EndGlobalSection
+EndGlobal

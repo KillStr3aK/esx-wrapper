@@ -19,10 +19,10 @@ namespace TestServer
     {
         public TestServer()
         {
-            EventHandlers["onResourceStart"] += new Action<string>(OnClientResourceStart);
+            EventHandlers["onResourceStart"] += new Action<string>(OnResourceStart);
         }
 
-        private void OnClientResourceStart(string resourceName)
+        private void OnResourceStart(string resourceName)
         {
             if (GetCurrentResourceName() != resourceName) return;
             RegisterCommand("JobInfo", new Action<int, List<object>, string>(JobInfo), false);

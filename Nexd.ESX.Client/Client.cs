@@ -36,7 +36,7 @@ namespace Nexd.ESX.Client
         {
             Raw.SetPlayerData(key, value);
         }
-        public static void ShowAdvancedNotification(string sender, string subject, string message, NotificationPicture notificationPicture = NotificationPicture.CHAR_MULTIPLAYER, IconType iconType = IconType.ChatBox, bool flash = false, bool savetoBreif = true, HudColor hudColor = HudColor.HUD_COLOUR_PURE_WHITE)
+        public static void ShowAdvancedNotification(string sender, string subject, string message, NotificationPicture notificationPicture = NotificationPicture.CHAR_MULTIPLAYER, IconType iconType = IconType.ChatBox, bool flash = false, bool savetoBreif = true, HudColor hudColor = HudColor.HUD_COLOUR_DEFAULT)
         {
             if (hudColor != HudColor.HUD_COLOUR_DEFAULT)
             {
@@ -46,7 +46,7 @@ namespace Nexd.ESX.Client
 
             Raw.ShowAdvancedNotification(sender, subject, message, notificationPicture.ToString(), (int)iconType, flash, savetoBreif, null);
         }
-        public static void ShowAdvancedNotification(string sender, string subject, string message, string textureDict, IconType iconType, bool flash = false, bool savetoBreif = true, HudColor hudColor = HudColor.HUD_COLOUR_PURE_WHITE)
+        public static void ShowAdvancedNotification(string sender, string subject, string message, string textureDict, IconType iconType, bool flash = false, bool savetoBreif = true, HudColor hudColor = HudColor.HUD_COLOUR_DEFAULT)
         {
             if (hudColor != HudColor.HUD_COLOUR_DEFAULT)
             {
@@ -136,12 +136,10 @@ namespace Nexd.ESX.Client
             {
                 return new Vehicle(Raw.GetVehicleInDirection());
             }
-            [Obsolete("You can use it but its useless in C#, you can get the vehicle properties from a Vehicle instance directly.", false)]
             public static VehicleProperties GetVehicleProperties(Vehicle vehicle)
             {
                 return new VehicleProperties(Raw.GetVehicleProperties(vehicle.Handle));
             }
-            [Obsolete("You can use it but its useless in C#, you can get the vehicle properties from a Vehicle instance directly.", false)]
             public static VehicleProperties GetVehicleProperties(int vehicle)
             {
                 return new VehicleProperties(Raw.GetVehicleProperties(vehicle));
@@ -168,7 +166,6 @@ namespace Nexd.ESX.Client
             {
                 return Raw.IsSpawnPointClear(coords, maxDistance);
             }
-            [Obsolete("You can use it but probably it is better to set these within the Vehicle class instead of this", false)]
             public static void SetVehicleProperties(Vehicle vehicle, VehicleProperties properties)
             {
                 Raw.SetVehicleProperties(vehicle.Handle, properties.Raw);

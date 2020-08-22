@@ -43,7 +43,7 @@ namespace Nexd.ESX.Server
             var rawdata = Raw.GetPlayers();
             foreach(var i in rawdata)
             {
-                temp.Add(new xPlayer(i));
+                temp.Add(ESX.GetPlayerFromId(i));
             }
 
             return temp;

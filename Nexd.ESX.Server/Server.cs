@@ -166,25 +166,82 @@ namespace Nexd.ESX.Server
     public class xPlayer
     {
         public dynamic Raw;
+
+        public int Index
+        {
+            get { return Raw.source; }
+        }
         public xPlayer(dynamic data)
         {
             Raw = data;
         }
-        public void TriggerEvent(string eventName, dynamic args)
+        public void TriggerEvent(string eventName, dynamic args = null)
         {
             Raw.triggerEvent(eventName, args);
         }
         public void SetCoords(Vector3 coords)
         {
-            Raw.setCoords(coords);
+            dynamic table = new
+            {
+                x = coords.X,
+                y = coords.Y,
+                z = coords.Z,
+                heading = 0.0f
+            };
+
+            Raw.setCoords(table);
+        }
+        public void SetCoords(Vector3 coords, float heading)
+        {
+            dynamic table = new
+            {
+                x = coords.X,
+                y = coords.Y,
+                z = coords.Z,
+                heading = heading
+            };
+
+            Raw.setCoords(table);
         }
         public void UpdateCoords(Vector3 coords)
         {
-            Raw.updateCoords(coords);
+            dynamic table = new
+            {
+                x = coords.X,
+                y = coords.Y,
+                z = coords.Z,
+                heading = 0.0f
+            };
+
+            Raw.updateCoords(table);
+        }
+
+        public void UpdateCoords(Vector3 coords, float heading)
+        {
+            dynamic table = new
+            {
+                x = coords.X,
+                y = coords.Y,
+                z = coords.Z,
+                heading = heading
+            };
+
+            Raw.updateCoords(table);
         }
         public Vector3 GetCoords(bool vector)
         {
             return Raw.getCoords(vector);
+        }
+        public Vector3 GetCoords(bool vector, ref float heading)
+        {
+            dynamic data = Raw.getCoords(vector);
+            Vector3 coords = new Vector3(data.X, data.Y, data.Z);
+            heading = data.heading;
+            return coords;
+        }
+        public float GetHeading()
+        {
+            return Raw.getCoords(true).heading;
         }
         public void Kick(string reason)
         {

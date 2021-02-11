@@ -251,7 +251,7 @@ namespace Nexd.ESX.Server
         {
             Raw.setMoney(money);
         }
-        public int GetMoney()
+        public uint GetMoney()
         {
             return Raw.getMoney();
         }

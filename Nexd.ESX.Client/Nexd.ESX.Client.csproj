@@ -33,8 +33,8 @@
     </DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CitizenFX.Core">
-      <HintPath>..\..\..\jatekok\fivem\FiveM.app\citizen\clr2\lib\mono\4.5\CitizenFX.Core.dll</HintPath>
+    <Reference Include="CitizenFX.Core.Client, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CitizenFX.Core.Client.1.0.4124\lib\net45\CitizenFX.Core.Client.dll</HintPath>
     </Reference>
     <Reference Include="Nexd.ESX.Shared">
       <HintPath>..\Nexd.ESX.Shared\bin\Release\Nexd.ESX.Shared.dll</HintPath>
@@ -49,10 +49,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Client.cs" />
+    <Compile Include="ESX.cs" />
+    <Compile Include="ESX.Game.cs" />
+    <Compile Include="ESX.Game.Utils.cs" />
+    <Compile Include="Enums\HudColor.cs" />
+    <Compile Include="Enums\IconType.cs" />
+    <Compile Include="Enums\NotificationPicture.cs" />
+    <Compile Include="ESX.Scaleform.Utils.cs" />
+    <Compile Include="ESX.Streaming.cs" />
+    <Compile Include="ESX.UI.cs" />
+    <Compile Include="ESX.UI.HUD.cs" />
+    <Compile Include="ESX.UI.Menu.cs" />
+    <Compile Include="Models\ESX.UI.MenuData.cs" />
+    <Compile Include="Models\ESX.UI.MenuElement.cs" />
+    <Compile Include="Models\PlayerData.cs" />
+    <Compile Include="Models\VehicleProperties.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ESX.Scaleform.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,5 +1,6 @@
 ﻿namespace Nexd.ESX.Client
 {
+    using System;
     using System.Collections.Generic;
 
     using CitizenFX.Core;
@@ -12,25 +13,76 @@
         public PlayerData() { }
         public PlayerData(dynamic data) => Raw = data;
 
-        public Job job => new Job(Raw.job);
+        public Job job
+        {
+            get
+            {
+                try
+                {
+                    return new Job(Raw.job);
+                }
+                catch { }
+                return null;
+            }
+        }
 
-        public Vector3 coords => new Vector3((float)Raw.coords.x, (float)Raw.coords.y, (float)Raw.coords.z);
+        public Vector3 coords
+        {
+            get
+            {
+                try
+                {
+                    return new Vector3((float)Raw.coords.x, (float)Raw.coords.y, (float)Raw.coords.z);
+                }
+                catch
+                {
+                    throw new Exception("Not found raw value");
+                }
+            }
+        }
 
-        public double heading => Raw.coords.heading;
-
-        public double maxWeight => Raw.maxWeight;
-
+        public double heading
+        {
+            get
+            {
+                try
+                {
+                    return Raw.coords.heading;
+                }
+                catch
+                {
+                    throw new Exception("Not found raw value");
+                }
+            }
+        }
+        public double maxWeight
+        {
+            get
+            {
+                try
+                {
+                    return Raw.maxWeight;
+                }
+                catch
+                {
+                    throw new Exception("Not found raw value");
+                }
+            }
+        }
         public List<Shared.Weapon> loadout
         {
             get
             {
                 List<Shared.Weapon> temp = new List<Shared.Weapon>();
-                var loadout = Raw.loadout;
-
-                foreach (var i in loadout)
+                try
                 {
-                    temp.Add(new Shared.Weapon(i));
+                    var loadout = Raw.loadout;
+                    foreach (var i in loadout)
+                    {
+                        temp.Add(new Shared.Weapon(i));
+                    }
                 }
+                catch { }
 
                 return temp;
             }
@@ -41,10 +93,15 @@
             get
             {
                 Account[] accounts = new Account[3];
-                var raw = Raw.accounts;
-                for (int i = 0; i < 3; i++)
-                    accounts[i] = new Account(raw[i]);
-
+                try
+                {
+                    var raw = Raw.accounts;
+                    for (int i = 0; i < 3; i++)
+                    {
+                        accounts[i] = new Account(raw[i]);
+                    }
+                }
+                catch { }
                 return accounts;
             }
         }
@@ -54,12 +111,15 @@
             get
             {
                 List<InventoryItem> inventory = new List<InventoryItem>();
-                var rawdata = Raw.inventory;
-                foreach (var i in rawdata)
+                try
                 {
-                    inventory.Add(new InventoryItem(i));
+                    var rawdata = Raw.inventory;
+                    foreach (var i in rawdata)
+                    {
+                        inventory.Add(new InventoryItem(i));
+                    }
                 }
-
+                catch { }
                 return inventory;
             }
         }

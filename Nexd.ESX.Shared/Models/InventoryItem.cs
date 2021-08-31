@@ -24,7 +24,7 @@ namespace Nexd.ESX.Shared
             {
                 try
                 {
-                    return Raw.count;
+                    return Convert.ToInt32(Raw.count);
                 }
                 catch
                 {

@@ -88,7 +88,7 @@ namespace Nexd.ESX.Shared
             {
                 try
                 {
-                    return Raw.grade_salary;
+                    return Convert.ToInt32(Raw.grade_salary);
                 }
                 catch
                 {
